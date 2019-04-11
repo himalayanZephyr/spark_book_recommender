@@ -60,22 +60,26 @@ For recommendation part, Spark, Scala and Python were used.
     
 ### Results
 Following were the results for different approaches:
-* __For ALS__: Mean Squared Error = 0.1076 \newline
+* __For ALS__: Mean Squared Error = 0.1076
 ![Console Output of ALS Recommendation](images/O1.png "Console Output of ALS Recommendation")
+    
+* __For KMeans__: 
+![Console Output of KMeans](images/O2.png "Console Output of KMeans")
 
+* __How to determine k__:<br>
+![Elbow Curve to Determine K](images/O3.png "Elbow Curve to Determine K")
+
+* __For Deep Learning Model__: 
+    The accuracy on the test set(20% of the data) was 35.8% which was not that satisfactory. This indicated that more features need to be used.
     
-* __For KMeans__: \newline
-    \vspace{3mm}\\
-    \begin{center}
-    \includegraphics[scale=0.30]{images/O2.png} \newline
-    \captionof{figure}{Console Output of KMeans}
-    \end{center}
     
-    \begin{center}
-    \includegraphics[scale=0.50]{images/O3.png}
-    \captionof{figure}{Elbow Curve to Determine K}
-    \end{center}
-* __For Deep Learning Model__: \newline
-    The accuracy on the test set(20\% of the data) was 35.8\% which was not that satisfactory. This indicated that more features need to be used.
-\end{enumerate}
+### Improvements to be done
+There are several things that can be followed as future work to improve upon further:
+* Expose as API maybe using Flask
+* Convert codebase to use DataFrame instead of RDD and Spark ML instead of Spark MLlib.
+* Hyperparameter tuning of the ALS model.
+* Incorporating more features into the deep learning model e.g. tags or authors.
+* (Minor Change)Right now the data files without headers are fed to Spark, code can be changed to accept csv files with headers.
+* (Minor change) Allow user to input sampleUserId and sampleBookId instead of changing in files.
+
 
